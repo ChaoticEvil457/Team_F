@@ -3,52 +3,52 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Calculator {
-	
+
 	static int numberOne = 0;
-	
+
 	static int numberTwo = 0;
-	
+
 	static String symbol = "";
-	
+
 	static boolean valid = false;
-	
+
 	static boolean validNumber = true;
-	
+
 	static Scanner scan = new Scanner(System.in);
-	
+
 	public static void main(String[] args) {
 
 		numberInput();
 
-			if(symbol.equals("*")){
+		if(symbol.equals("*")){
 
-				System.out.println(numberOne*numberTwo);
+			System.out.println(numberOne*numberTwo);
 
-				valid = true;
+			valid = true;
 
-			}
+		}
 
-			else if(symbol.equals("-")){
+		else if(symbol.equals("-")){
 
-				System.out.println(numberOne-numberTwo);
+			System.out.println(numberOne-numberTwo);
 
-				valid = true;
+			valid = true;
 
-			}
+		}
 
-			else if(symbol.equals("/")){
+		else if(symbol.equals("/")){
 
-				System.out.println(numberOne/numberTwo);
+			System.out.println(numberOne/numberTwo);
 
-				valid = true;}
+			valid = true;}
 
-			else if(symbol.equals("+")){
+		else if(symbol.equals("+")){
 
-				System.out.println(numberOne+numberTwo);
+			System.out.println(numberOne+numberTwo);
 
-				valid = true;
+			valid = true;
 
-			}
+		}
 	}
 	public static void numberInput(){
 
@@ -75,23 +75,25 @@ public class Calculator {
 
 		}
 
-		System.out.println("Input the symbol that you would like to use");
+		System.out.println("Input the symbol that you would like to use (-, +, /, or *)");
 
-		symbol=scan.next();
+		
 		while(valid==false){
-		if(symbol!="+"||symbol!="-"||symbol!="/"||symbol!="*"){
-
-			System.out.print("Sorry ");
-
-			System.out.print(symbol);
-
-			System.out.println(" is not a valid symbol. Please re-enter your symbol");
-
-			System.out.println("Input the symbol that you would like to use");
-
 			symbol=scan.next();
+			if(!symbol.equals("+")&&!symbol.equals("-")&&!symbol.equals("/")&&!symbol.equals("*")){
 
-		}
+				System.out.print("Sorry ");
+
+				System.out.print(symbol);
+
+				System.out.println(" is not a valid symbol. Please re-enter your symbol");
+
+				System.out.println("Input the symbol that you would like to use");
+
+			}
+			else{
+				valid=true;
+			}
 		}
 
 		while(validNumber==false){
@@ -109,11 +111,11 @@ public class Calculator {
 			catch(InputMismatchException e){
 
 				System.out.print(numberTwo);
-				
+
 				System.out.println(" is not a number.");
-				
+
 				validNumber=false;
-				
+
 			}
 		}
 	}
