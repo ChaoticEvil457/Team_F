@@ -11,7 +11,7 @@ public class Binary_Search {
 		System.out.println("Input a number from 1 to 98");
 		
 		int number=scan.nextInt();
-
+		
 		int z=0;
 
 		int x=0;
