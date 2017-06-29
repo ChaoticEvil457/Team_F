@@ -90,5 +90,4 @@ public class Binary_Search {
 		}
 		return(1);
 	}
-	//49 b/c 6, 78+ b/c 52
 }
