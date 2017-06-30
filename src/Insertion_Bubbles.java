@@ -18,17 +18,9 @@ public class Insertion_Bubbles {
 
 		while(j<ray.size()){
 
-
-			if(ray.get(x)>ray.get(y)){
-
-
-
-			}
+			ray.add(1,1);
+			System.out.println(ray);
 			
-			else{
-				j++;
-				
-			}
 		}
 	}
 }
