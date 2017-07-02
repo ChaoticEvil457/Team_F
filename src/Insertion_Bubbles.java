@@ -13,14 +13,40 @@ public class Insertion_Bubbles {
 		ray.addAll(Arrays.asList(m));
 
 		int x=0;
-		int y=1;
-		int j=0;
+		int y=0;
+		int j=1;
+		int counter=0;
 
-		while(j<ray.size()){
+		while(counter<ray.size()){
+			for(int c=j;c>0;c--){
+				if(c<=0){
+					c++;
+					j=1;
+				}
+				if(c>=ray.size()){
+					c=j;
+				}
 
-			ray.add(1,1);
-			System.out.println(ray);
-			
+				if(ray.get(c)<ray.get(c-1)){
+					
+
+					
+					x=ray.get(c);
+					y=ray.get(c-1);
+
+					ray.remove(c);
+					ray.remove(c-1);
+					
+					
+					ray.add(c-1,x);
+					ray.add(c,y);
+
+					counter=0;
+					System.out.println(ray);
+				}
+				c=c+2;
+				counter++;
+			}
 		}
 	}
 }
