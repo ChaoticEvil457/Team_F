@@ -2,8 +2,12 @@ public class BogoBogoSort {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-		int[] ray={4,1,5,2,3,6,7,8,9,0,10,11,12,13,14,15};
+		
+		long time=System.currentTimeMillis();
+		
+		System.out.println(time/1000);
+		
+		int[] ray={4,1,5,2,9,3,6,7,8,0,10,12};
 
 		int z=0;
 		int g=0;
@@ -61,7 +65,10 @@ public class BogoBogoSort {
 			l++;
 
 		}
-
+		
+		
+		System.out.println();
+		System.out.println((System.currentTimeMillis()-time)/1000);
 	}
 
 }
