@@ -7,37 +7,60 @@ public class QuickSort {
 
 		ArrayList<Integer> ray=new ArrayList<Integer>();
 		
-		int x=0;
+		ArrayList<Integer> ray3=new ArrayList<Integer>();
+
 		int y=0;
-		int z=0;
-		
-		
+
 		ray.add(5);
 		ray.add(4);
 		ray.add(1);
 		ray.add(3);
 		ray.add(2);
-		
-		sorter(ray,x,y,z);
+
+		sorter(ray,y,ray3);
+
+		System.out.println(ray);
+
 	}
-	
-	public static int sorter(ArrayList<Integer> ray,int x,int y,int z){
-		
-		x=ray.get(ray.size());
-		
-		if(ray.get(z)>ray.get(y)){
-			
-			ArrayList<Integer> ray2=new ArrayList<>();
+
+	public static int sorter(ArrayList<Integer> ray,int y,ArrayList<Integer> ray3){
+
+		if(ray.size()-1<0){
 			
 			
 			
-			return(sorter(ray2,x,y,z));
 			
 		}
+
+		int pivot=ray.get(ray.size()-1);
+
+		for(int x=ray.size()-1;x>0;x--){
+
+			if(ray.get(x)>pivot){
+
+				ray.add(ray.get(pivot+1),x);
+
+				y=0;
+
+			}
+
+			else{
+
+				y++;
+
+			}
+
+		}
+
+
+		if(y>ray.size()){
+
+			return(1);	
+		}
+		ArrayList<Integer> ray2=new ArrayList<Integer>();
 		
-		
-		
-		return(1);
+		return(sorter(ray2,y,ray3));
+
 	}
-	
+
 }

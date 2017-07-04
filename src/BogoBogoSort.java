@@ -7,7 +7,7 @@ public class BogoBogoSort {
 		
 		System.out.println(time/1000);
 		
-		int[] ray={4,1,5,2,9,3,6,7,8,0,10,12};
+		int[] ray={4,1,5,2,9,3,6,7,8,0,10,12,13};
 
 		int z=0;
 		int g=0;
