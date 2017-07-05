@@ -7,13 +7,14 @@ public class QuickSort {
 
 		ArrayList<Integer> ray=new ArrayList<Integer>();
 
-		ray.add(2);
+		ray.add(23);
 		ray.add(1);
-		ray.add(3);
+		ray.add(55);
 		ray.add(5);
-		ray.add(4);
+		ray.add(3165);
+		ray.add(45);
 
-		sorter(ray);
+		ray = sorter(ray);
 
 		System.out.println(ray);
 
@@ -24,8 +25,6 @@ public class QuickSort {
 		if(ray.size()<=1){
 			return(ray);
 		}
-
-		System.out.println(ray.size());
 
 		int pivot=ray.get(ray.size()-1);
 
@@ -46,29 +45,24 @@ public class QuickSort {
 
 		int l=0;
 
-		while(l<ray.size()/2){
+		while(l<ray.lastIndexOf(pivot)){
 
-			ray2.add(l,ray.get(l));
+			ray2.add(ray.get(l));
 
 			l++;
 
 		}
-
-		int le=0;
 		
-		while(le<ray.size()/2){
+		l=ray.lastIndexOf(pivot)+1;
+		
+		while(l<ray.size()){
 
-			ray3.add(le,ray.get(l)+1);
-
+			ray3.add(ray.get(l));
+			
 			l++;
-			le++;
 
 		}
 
-		System.out.println(ray.size());
-		System.out.println(ray2);
-		System.out.println(pivot);
-		System.out.println(ray3);
 		ray2=sorter(ray2);
 		ray3=sorter(ray3);
 
