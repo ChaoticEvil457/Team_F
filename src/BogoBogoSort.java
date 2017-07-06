@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collection;
 
 public class BogoBogoSort {
 
@@ -7,8 +6,6 @@ public class BogoBogoSort {
 		// TODO Auto-generated method stub
 		
 		long time=System.currentTimeMillis();
-		
-		System.out.println(time/1000);
 		
 		ArrayList<Integer> ray=new ArrayList<Integer>();
 		
@@ -55,7 +52,7 @@ public class BogoBogoSort {
 				z++;
 				counter++;
 			}
-			if(z+1>=ray.length){
+			if(z+1>=ray.size()){
 				z=0;
 			}
 
@@ -64,15 +61,7 @@ public class BogoBogoSort {
 
 		}
 		
-		l=0;
-		while(l<ray.length){
-
-			System.out.print(ray[l]);
-			System.out.print(",");
-
-			l++;
-
-		}
+		System.out.println(ray);
 		
 		
 		System.out.println();
