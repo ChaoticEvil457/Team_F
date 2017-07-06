@@ -1,5 +1,5 @@
 
-public class BogoSort {
+public class BozoSort {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

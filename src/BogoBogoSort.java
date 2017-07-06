@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Collection;
+
 public class BogoBogoSort {
 
 	public static void main(String[] args) {
@@ -7,34 +10,39 @@ public class BogoBogoSort {
 		
 		System.out.println(time/1000);
 		
-		int[] ray={4,1,5,2,9,3,6,7,8,0,10,12,13};
-
+		ArrayList<Integer> ray=new ArrayList<Integer>();
+		
+		ray.add(5);
+		ray.add(4);
+		ray.add(3);
+		ray.add(6);
+		ray.add(2);
+		ray.add(1);
+		ray.add(8);
+		ray.add(7);
+		
 		int z=0;
 		int g=0;
 		int f=0;
 		int l=0;
 		int counter=-1;
 
-		while(counter<ray.length){
+		while(counter<ray.size()){
 
-
-			int x=(int) (Math.random()*ray.length);
-
-			int y=(int) (Math.random()*ray.length);
-			if(z+1>=ray.length){
+			if(z+1>=ray.size()){
 				z=0;
 			}
 
-			if(ray[z]>ray[z+1]){
+			if(ray.get(z)>ray.get(z+1)){
 				int k=0;
-				while(k<ray.length){
+				while(k<ray.size()){
+
+					int p=(int) (Math.random()*ray.size());
+					int o=ray.get(k);
+					int	i=ray.get(p);
 					
-					int p=(int) (Math.random()*ray.length);
-					int o=ray[k];
-					int	i=ray[p];
-					
-					ray[k]=i;
-					ray[p]=o;
+					ray.add(k,i);
+					ray.add(p,o);
 					
 					
 					k++;
