@@ -12,15 +12,16 @@ public class Bubbles {
 		int k=0;
 
 		int track=0;
-		int ray[]={2134123,132143,23423,214,3243,3242};
+		int ray[]={2134123,132143,23423,214,3243,3242,3241,1234123,51423242};
 
 		
-		
+		long time=System.currentTimeMillis();
 		counter(ray,x,y,track,z,c,j);
 		while(k<ray.length){
 		System.out.println(ray[k]);
 		k++;
 		}
+		System.out.println((System.currentTimeMillis()-time));
 	}
 
 	public static int counter(int ray[], int x, int y, int track,int z, int c,int j){

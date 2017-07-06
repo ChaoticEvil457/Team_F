@@ -4,11 +4,11 @@ public class BogoBogoSort {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+
 		long time=System.currentTimeMillis();
-		
+
 		ArrayList<Integer> ray=new ArrayList<Integer>();
-		
+
 		ray.add(5);
 		ray.add(4);
 		ray.add(3);
@@ -17,13 +17,25 @@ public class BogoBogoSort {
 		ray.add(1);
 		ray.add(8);
 		ray.add(7);
+		int l=0;
+
+		System.out.println(ray);
 		
+		sorter(ray,l);
+		System.out.println(l);
+		System.out.println(ray);
+		System.out.println();
+		System.out.println((System.currentTimeMillis()-time)/1000);
+
+	}
+	public static ArrayList<Integer> sorter(ArrayList<Integer> ray,int l){
+
 		int z=0;
 		int g=0;
 		int f=0;
-		int l=0;
 		int counter=-1;
 
+		ArrayList<Integer> ray2=new ArrayList<Integer>();
 		while(counter<ray.size()){
 
 			if(z+1>=ray.size()){
@@ -35,18 +47,18 @@ public class BogoBogoSort {
 				while(k<ray.size()){
 
 					int p=(int) (Math.random()*ray.size());
-					int o=ray.get(k);
-					int	i=ray.get(p);
+
+					f=ray.get(p);
+
+					ray.remove(ray.get(p));
 					
-					ray.add(k,i);
-					ray.add(p,o);
 					
-					
+
 					k++;
 				}
-			
-			counter=-1;
-			z++;
+
+				counter=-1;
+				z++;
 			}
 			else{
 				z++;
@@ -58,14 +70,7 @@ public class BogoBogoSort {
 
 			l++;
 			System.out.println(l);
-
 		}
-		
-		System.out.println(ray);
-		
-		
-		System.out.println();
-		System.out.println((System.currentTimeMillis()-time)/1000);
+		return(ray2);
 	}
-
 }

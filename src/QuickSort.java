@@ -13,9 +13,15 @@ public class QuickSort {
 		ray.add(5);
 		ray.add(3165);
 		ray.add(45);
-
+		ray.add(6246);
+		ray.add(3165);
+		ray.add(453);
+		ray.add(525);
+		ray.add(315);
+		ray.add(45644);
+		long time=System.currentTimeMillis();
 		ray = sorter(ray);
-
+		System.out.println((System.currentTimeMillis()-time));
 		System.out.println(ray);
 
 	}
