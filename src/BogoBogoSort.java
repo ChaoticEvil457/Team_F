@@ -9,68 +9,118 @@ public class BogoBogoSort {
 
 		ArrayList<Integer> ray=new ArrayList<Integer>();
 
-		ray.add(5);
 		ray.add(4);
 		ray.add(3);
-		ray.add(6);
 		ray.add(2);
+		ray.add(0);
 		ray.add(1);
-		ray.add(8);
-		ray.add(7);
-		int l=0;
+		int count=0;
 
 		System.out.println(ray);
-		
-		sorter(ray,l);
-		System.out.println(l);
+
+		ray=sorter(ray,count);
+
 		System.out.println(ray);
-		System.out.println();
+
 		System.out.println((System.currentTimeMillis()-time)/1000);
 
 	}
-	public static ArrayList<Integer> sorter(ArrayList<Integer> ray,int l){
+	public static ArrayList<Integer> sorter(ArrayList<Integer> ray,int count){
+		try{
+			int f=0;
 
-		int z=0;
-		int g=0;
-		int f=0;
-		int counter=-1;
+			ArrayList<Integer> ray2=new ArrayList<Integer>();
+			
+			if(Sorted(ray)){
 
-		ArrayList<Integer> ray2=new ArrayList<Integer>();
-		while(counter<ray.size()){
+				return(ray);
 
-			if(z+1>=ray.size()){
-				z=0;
 			}
+			else{
+			
+				int j=ray.size()-1;
+				
+				while(j>=0){
+					
+					ray.remove(j);
+					
+					sorter(ray,count);
+					j--;
+					
+					if(ray.size()==2){
+					
+						if(Sorted(ray)){
+							
+							return(ray);
+							
+						}
+						else{
+							
+							sorter(ray,count);
+							
+						}
+						
+					}
+				}
+				
+				
+				
+				
+				f=0;
 
-			if(ray.get(z)>ray.get(z+1)){
-				int k=0;
-				while(k<ray.size()){
+				while(ray.size()>0){
 
 					int p=(int) (Math.random()*ray.size());
 
 					f=ray.get(p);
 
 					ray.remove(ray.get(p));
-					
-					
 
-					k++;
+					ray2.add(0,f);
+
 				}
 
-				counter=-1;
-				z++;
-			}
-			else{
-				z++;
-				counter++;
-			}
-			if(z+1>=ray.size()){
-				z=0;
+				ray2.addAll(ray);
+
+				count++;
+				System.out.println(count);
 			}
 
-			l++;
-			System.out.println(l);
+			ray2=sorter(ray2,count);
+
+			return(ray2);
+
 		}
-		return(ray2);
+		catch(StackOverflowError e){
+			return(null);
+		}
+	}
+
+
+	public static boolean Sorted(ArrayList<Integer> ray){
+
+		int x=0;
+		int counter=0;
+
+		while(x+1<ray.size()){
+			if(ray.get(x)>ray.get(x+1)){
+
+				return(false);
+
+			}
+			else{
+				counter++;
+			}
+			x++;
+		}
+		if(counter+1==ray.size()){
+
+			return(true);
+
+		}
+		else{
+			return(false);
+		}
+
 	}
 }
