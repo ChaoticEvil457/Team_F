@@ -38,14 +38,12 @@ public class BogoBogoSort {
 			}
 			else{
 			
-				int j=ray.size()-1;
+				int j=0;
 				
-				while(j>=0){
-					
-					ray.remove(j);
+				while(j<=ray.size()-1){
 					
 					sorter(ray,count);
-					j--;
+					j++;
 					
 					if(ray.size()==2){
 					
