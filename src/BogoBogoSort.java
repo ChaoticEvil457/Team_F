@@ -12,6 +12,8 @@ public class BogoBogoSort {
 		ray.add(4);
 		ray.add(3);
 		ray.add(2);
+		ray.add(1);
+		ray.add(455);
 		int count=0;
 
 		System.out.println(ray);
@@ -24,71 +26,50 @@ public class BogoBogoSort {
 
 	}
 	public static ArrayList<Integer> sorter(ArrayList<Integer> ray,int count){
-		try{
-			int f=0;
+		int f=0;
 
-			ArrayList<Integer> ray2=new ArrayList<Integer>();
-			
-			if(Sorted(ray)){
+		ArrayList<Integer> ray2=new ArrayList<Integer>();
 
-				return(ray);
+		if(Sorted(ray)){
 
-			}
-			else{
-			
-				for(int j=0;j<ray.size()-1;j++){
-					if(j+1>ray.size()-1){
-						
-						j=0;
-						
-					}
-					if(j<j+1){
-					
-						if(Sorted(ray)){
-							
-							return(ray);
-							
-						}
-						else{
-							
-							sorter(ray,count);
-							
-						}
-						
-					}
-				}
-				
-				
-				
-				
-				f=0;
-
-				while(ray.size()>0){
-
-					int p=(int) (Math.random()*ray.size());
-
-					f=ray.get(p);
-
-					ray.remove(ray.get(p));
-
-					ray2.add(0,f);
-
-				}
-
-				ray2.addAll(ray);
-
-				count++;
-				System.out.println(count);
-			}
-
-			ray2=sorter(ray2,count);
-
-			return(ray2);
+			return(ray);
 
 		}
-		catch(StackOverflowError e){
-			return(null);
+		else{
+
+
+
+
+			f=0;
+
+			while(ray.size()>0){
+
+				int p=(int) (Math.random()*ray.size());
+
+				f=ray.get(p);
+
+				ray.remove(ray.get(p));
+
+				ray2.add(0,f);
+			}
+
+			ray2.addAll(ray);
+
+			count++;
+			System.out.println(count);
 		}
+
+		ray2=sorter(ray2,count);
+
+		for(int j=0;j<ray.size()-2;j++){
+			for(int g=0;g<j;g++){
+				if(ray.get(g)>ray.get(g)+1){
+					sorter(ray,count);
+				}
+			}
+		}
+
+		return(ray2);
 	}
 
 
