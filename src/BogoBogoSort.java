@@ -12,8 +12,6 @@ public class BogoBogoSort {
 		ray.add(4);
 		ray.add(3);
 		ray.add(2);
-		ray.add(0);
-		ray.add(1);
 		int count=0;
 
 		System.out.println(ray);
@@ -38,14 +36,13 @@ public class BogoBogoSort {
 			}
 			else{
 			
-				int j=0;
-				
-				while(j<=ray.size()-1){
-					
-					sorter(ray,count);
-					j++;
-					
-					if(ray.size()==2){
+				for(int j=0;j<ray.size()-1;j++){
+					if(j+1>ray.size()-1){
+						
+						j=0;
+						
+					}
+					if(j<j+1){
 					
 						if(Sorted(ray)){
 							
