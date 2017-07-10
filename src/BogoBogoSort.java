@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class BogoBogoSort {
 
@@ -14,6 +15,16 @@ public class BogoBogoSort {
 		ray.add(2);
 		ray.add(1);
 		ray.add(455);
+		ray.add(4535);
+		ray.add(7);
+		ray.add(8);
+		ray.add(9);
+		ray.add(0);
+		ray.add(355);
+		ray.add(2535);
+
+
+
 		int count=0;
 
 		System.out.println(ray);
@@ -27,7 +38,7 @@ public class BogoBogoSort {
 	}
 	public static ArrayList<Integer> sorter(ArrayList<Integer> ray,int count){
 		int f=0;
-
+		Random rand=new Random();
 		ArrayList<Integer> ray2=new ArrayList<Integer>();
 
 		if(Sorted(ray)){
@@ -35,39 +46,40 @@ public class BogoBogoSort {
 			return(ray);
 
 		}
-		else{
-
-
-
+		else{ 
 
 			f=0;
 
 			while(ray.size()>0){
 
-				int p=(int) (Math.random()*ray.size());
+				int p=rand.nextInt(ray.size());
 
 				f=ray.get(p);
 
-				ray.remove(ray.get(p));
+				ray.remove(p);
 
 				ray2.add(0,f);
 			}
-
-			ray2.addAll(ray);
-
 			count++;
 			System.out.println(count);
+		}		
+		if(Sorted(ray2)){
+
+			return(ray2);
+
 		}
+		else{
+			ray2=sorter(ray2,count);
 
-		ray2=sorter(ray2,count);
-
-		for(int j=0;j<ray.size()-2;j++){
-			for(int g=0;g<j;g++){
-				if(ray.get(g)>ray.get(g)+1){
-					sorter(ray,count);
+			for(int j=0;j<ray.size()-2;j++){
+				for(int g=0;g<j;g++){
+					if(ray.get(g)>ray.get(g)+1){
+						sorter(ray,count);
+					}
 				}
-			}
+			}	
 		}
+
 
 		return(ray2);
 	}
