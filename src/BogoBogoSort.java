@@ -15,15 +15,6 @@ public class BogoBogoSort {
 		ray.add(2);
 		ray.add(1);
 		ray.add(455);
-		ray.add(4535);
-		ray.add(7);
-		ray.add(8);
-		ray.add(9);
-		ray.add(0);
-		ray.add(355);
-		ray.add(2535);
-
-
 
 		int count=0;
 
