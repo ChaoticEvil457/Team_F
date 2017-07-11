@@ -1,5 +1,8 @@
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Hash_Browns {
 
@@ -23,15 +26,16 @@ public class Hash_Browns {
 		h.put("Aidan(offshore)",(double) -Integer.MAX_VALUE);
 
 		h.put("Agamemnon",0.65);
+		
 		while(true){
 
-			System.out.println("Please enter a valid command (print, add, withdraw, or add account)");
+			System.out.println("Please enter a valid command (print, add, withdraw, or addAccount)");
 
 			String input=scan.next();
 
 			if(input.equalsIgnoreCase("print")){
 
-				System.out.println(h);
+				printer();
 
 			}
 			else if(input.equalsIgnoreCase("add")){
@@ -47,8 +51,8 @@ public class Hash_Browns {
 								System.out.println("Enter the amount of money you would like to add");
 
 								double y=scan.nextDouble();
-
-								add(x,y);
+								
+								h.put(x,y);
 								
 								hi1=true;
 								
@@ -59,7 +63,7 @@ public class Hash_Browns {
 
 							}
 						}
-				System.out.println(h);
+				printer();
 			}
 			else if(input.equalsIgnoreCase("withdraw")){
 				boolean hi12=false;
@@ -88,7 +92,7 @@ public class Hash_Browns {
 						}
 				System.out.println(h);
 			}
-			else if(input.equalsIgnoreCase("add account")){
+			else if(input.equalsIgnoreCase("addAccount")){
 				boolean hi=false;
 
 				while(hi==false){
@@ -107,6 +111,7 @@ public class Hash_Browns {
 						System.out.println("There is already an account with that name.");
 					}
 				}
+				printer();
 			}
 			else{
 
@@ -133,7 +138,16 @@ public class Hash_Browns {
 	}
 	public static void printer(){
 		
+		Set set=h.entrySet();
 		
+		Iterator i=set.iterator();
+		
+		while(i.hasNext()){
+			Map.Entry m=(Map.Entry)i.next();
+			System.out.print(m.getKey()+":"+" $"+m.getValue());
+			System.out.println();
+			
+		}
 		
 	}
 }
