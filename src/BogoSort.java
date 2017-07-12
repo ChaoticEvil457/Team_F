@@ -16,7 +16,7 @@ public class BogoSort {
 		ray.add(0);
 		ray.add(1);
 		int count=0;
-
+		
 		System.out.println(ray);
 
 		ray=sorter(ray,count);
