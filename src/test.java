@@ -5,38 +5,21 @@ public class test {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		ArrayList<Integer> ray=new ArrayList<Integer>();
-		ray.add(1);
-		ray.add(2);
-		ray.add(4);
-		ray.add(3);
+		Int string=new Int();
 		
+		double a=314.0;
 		
-		Sorted(ray);
-		System.out.println(Sorted(ray));
+		string.add(new Exception());
+		string.add(new Exception());
 		
-	}
-	public static boolean Sorted(ArrayList<Integer> ray){
-
-		int x=0;
-		int counter=0;
-		
-		while(x+1<ray.size()){
-			if(ray.get(x)<ray.get(x+1)){
-				
-				counter++;
-				
-			}
-			x++;
+		try {
+			throw (Exception)string.get(0);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		if(counter+1==ray.size()){
-			
-			return(true);
-			
-		}
-		else{
-			return(false);
-		}
-
+		
+		System.out.println(string.get(1));
+		
 	}
 }

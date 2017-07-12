@@ -5,7 +5,7 @@ public class Int {
 
 	public Int(){
 
-		ray=new Object[1];
+		ray=new Object[0];
 
 	}
 
@@ -49,6 +49,7 @@ public class Int {
 	public void add(int z,Object s){
 
 		int u=0;
+		int a=0;
 
 		Object[] ray2=new Object[ray.length+1];
 
@@ -56,12 +57,14 @@ public class Int {
 			if(u==z){
 
 				ray2[u]=s;
+				a--;
 
 			}
 			else{
-				ray2[u]=ray[u];
+				ray2[u]=ray[a];
 			}
 			u++;
+			a++;
 
 		}
 
@@ -98,13 +101,13 @@ public class Int {
 		return(false);
 	}
 
-	public Object indexOf(int s){
+	public Object indexOf(Object s){
 
 		int u=0;
 
 		while(u<=ray.length){
 
-			if(u==s){
+			if(ray[u].equals(s)){
 
 				break;
 			}
