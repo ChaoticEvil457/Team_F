@@ -89,16 +89,16 @@ public class Int {
 
 		while(u<=ray.length){
 
-			if(ray[u]==s){
+			if(ray[u].equals(s)){
 
 				return(true);
-
+				
 			}	
 
 			u++;
 		}
-
 		return(false);
+		
 	}
 
 	public Object indexOf(Object s){
@@ -115,6 +115,6 @@ public class Int {
 			u++;
 		}
 
-		return(ray[u]);
+		return(u);
 	}
 }

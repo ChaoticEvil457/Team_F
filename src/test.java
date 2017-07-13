@@ -9,17 +9,14 @@ public class test {
 		
 		double a=314.0;
 		
-		string.add(new Exception());
-		string.add(new Exception());
+		string.add(a);
+
 		
-		try {
-			throw (Exception)string.get(0);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		System.out.println(string.indexOf(a));
 		
-		System.out.println(string.get(1));
-		
+		System.out.println(string.contains(314.0));
+		System.out.println(string.size());
+		string.clear();
+		System.out.println(string.size());
 	}
 }
