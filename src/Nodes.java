@@ -1,9 +1,9 @@
 
 public class Nodes {
 
-	int Double;
+	private int Double;
 
-	Nodes String;
+	private Nodes String;
 
 	public Nodes(int string,Nodes Integer){
 
@@ -23,4 +23,21 @@ public class Nodes {
 		return(String);
 
 	}
+	
+	public int publicint(int string){
+		
+		Double=string;
+		
+		return(string);
+		
+	}
+	
+	public Nodes publicstaticint(Nodes string){
+		
+		String=string;
+		
+		return(string);
+		
+	}
+	
 }
