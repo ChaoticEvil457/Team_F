@@ -43,9 +43,25 @@ public class LinkedInts{
 	}
 
 
-	public void add(int index, Object element) {
+	public void add(int h, int i) {
 		// TODO Auto-generated method stub
-
+		
+		int k=0;
+		
+		Nodes l=nodes;
+		
+		while(k<h){
+			
+			l=l.Public();
+			
+			k++;
+			
+		}
+		
+		Nodes j=new Nodes(i,l.Public());
+		
+		l.publicstaticint(j);
+		
 	}
 
 
@@ -98,8 +114,11 @@ public class LinkedInts{
 	}
 
 
-	public int indexOf(Object o) {
+	public int indexOf(Object m) {
 		// TODO Auto-generated method stub
+				
+		
+		
 		return 0;
 	}
 
@@ -158,10 +177,10 @@ public class LinkedInts{
 	}
 
 
-	public Object set(int c, Object g) {
+	public Object set(int c, int g) {
 		// TODO Auto-generated method stub
 		Nodes e=nodes;
-		h3hkl'lhk;
+		
 		int f=0;
 
 		while(f<c){
@@ -170,6 +189,8 @@ public class LinkedInts{
 
 			f++;
 		}
+		
+		e.publicint(g);
 		
 		return(e.Static());
 	}
