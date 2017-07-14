@@ -116,8 +116,14 @@ public class LinkedInts{
 
 	public int indexOf(Object m) {
 		// TODO Auto-generated method stub
-				
 		
+		
+		
+		while(){
+			
+			
+			
+		}
 		
 		return 0;
 	}
