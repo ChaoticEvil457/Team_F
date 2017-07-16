@@ -118,14 +118,7 @@ public class LinkedInts{
 		// TODO Auto-generated method stub
 		
 		
-		
-		while(){
-			
-			
-			
-		}
-		
-		return 0;
+		return(0);
 	}
 
 
