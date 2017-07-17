@@ -1,22 +1,18 @@
-import java.util.ArrayList;
+
 
 public class test {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		HashMap h=new HashMap();
 		
-		Int string=new Int();
+		h.add("hello","bye");
+		h.add(" ", "1");
+		h.add("  ", "2");
+		h.add("   ", "3");
+		h.add("    ", "4");
 		
-		double a=314.0;
-		
-		string.add(a);
+		System.out.println(h.get("hello"));
 
-		
-		System.out.println(string.indexOf(a));
-		
-		System.out.println(string.contains(314.0));
-		System.out.println(string.size());
-		string.clear();
-		System.out.println(string.size());
 	}
 }
