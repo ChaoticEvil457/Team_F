@@ -20,27 +20,32 @@ public class HashMap{
 		return(Math.abs(out)%ray.length);
 	}
 
-	
-	public void add(String key, String value){
+
+	public void add(Object key, Object value){
 
 		int n;
 
 		n=hash(key);
 
-		ray[n]=value;
+		ray[n].add(new Pear(key,value));
 
+	}
+
+	public Object get(Object key){
+
+		int n=hash(key);
+
+		for(int i=0;i<ray[n].size();i++){
+			if(((Pear)(ray[n].get(i))).getKey().equals(key)){
+
+				return(ray[n].get(n));
+
+			}
+
+		}
+		return(ray[n]);
 	}
 	/*
-	public String get(String key){
-
-		int n;
-
-		n=hash(key);
-
-		return(ray[n]);
-
-	}
-
 	public void resize(){ 
 
 		String[] ray2=new String[ray.length*2];
@@ -64,11 +69,6 @@ public class HashMap{
 
 	}
 	 */
-	//public String toString(){
 
-
-
-
-	//}
 
 }
