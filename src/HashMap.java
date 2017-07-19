@@ -2,7 +2,7 @@ import java.util.LinkedList;
 
 public class HashMap{
 
-	LinkedList[] ray=new LinkedList[4096];
+	LinkedList<Pear>[] ray=new LinkedList[4096];
 
 	public HashMap(){
 
@@ -36,20 +36,35 @@ public class HashMap{
 		int n=hash(key);
 
 		for(int i=0;i<ray[n].size();i++){
-			if(((Pear)(ray[n].get(i))).getKey().equals(key)){
+			if((ray[n].get(i)).getKey().equals(key)){
 
-				return(ray[n].get(n));
+				return((ray[n].get(i)).getValue());
 
 			}
 
 		}
 		return(ray[n]);
 	}
-	/*
+
+	public void remove(Object key){
+		int n=hash(key);
+
+		for(int a=0;a<ray[n].size();a++){
+
+			if(ray[n].get(a).getKey().equals(key)){
+				
+				ray[n].remove(a);
+				return;
+			}
+			
+		}
+	}
+
+	
 	public void resize(){ 
 
-		String[] ray2=new String[ray.length*2];
-		String[] tempray=new String[ray.length];
+		LinkedList<Pear>[] ray2=new LinkedList[ray.length*2];
+		LinkedList<Pear>[] tempray=new LinkedList[ray.length];
 
 		for(int a=0;a<=ray.length;a++){
 
@@ -68,7 +83,7 @@ public class HashMap{
 		}
 
 	}
-	 */
+	 
 
 
 }

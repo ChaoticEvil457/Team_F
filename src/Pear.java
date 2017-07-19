@@ -38,11 +38,11 @@ public class Pear {
 		return(k);
 
 	}
-	//public String toString(){
+	public String toString(){
 		
+		return(value.toString());
 		
-		
-	//}
+	}
 }
 
 /*
