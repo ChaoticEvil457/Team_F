@@ -2,7 +2,7 @@ import java.util.LinkedList;
 
 public class HashMap{
 
-	LinkedList<Pear>[] ray=new LinkedList[4096];
+	LinkedList<Pear>[] ray=new LinkedList[3];
 
 	public HashMap(){
 
@@ -65,7 +65,8 @@ public class HashMap{
 
 		LinkedList<Pear>[] ray2=new LinkedList[ray.length*2];
 		LinkedList<Pear>[] tempray=new LinkedList[ray.length];
-
+		
+		
 		for(int a=0;a<=ray.length;a++){
 
 			tempray[a]=ray[a];
@@ -76,14 +77,14 @@ public class HashMap{
 
 		for(int b=0;b<=ray.length;b++){
 			for(int c=0;c<=ray[b].size();c++){
-				int n=hash(ray[b]);
-				ray2[n]=ray[b];
+				
+				add(tempray[b].get(c).getKey(),tempray[b].get(c).getValue());
 
 			}
 		}
-
+		
+		
+		
+		
 	}
-	 
-
-
 }
