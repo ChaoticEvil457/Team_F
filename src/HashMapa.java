@@ -1,10 +1,10 @@
 import java.util.LinkedList;
 
-public class HashMap{
+public class HashMapa{
 
 	LinkedList<Pear>[] ray=new LinkedList[3];
 
-	public HashMap(){
+	public HashMapa(){
 
 		for(int a=0;a<ray.length;a++){
 
@@ -31,12 +31,12 @@ public class HashMap{
 
 	}
 
-	public Object get(Object key){
+	public Object get(Object value){
 
-		int n=hash(key);
+		int n=hash(value);
 
 		for(int i=0;i<ray[n].size();i++){
-			if((ray[n].get(i)).getKey().equals(key)){
+			if((ray[n].get(i)).getValue().equals(value)){
 
 				return((ray[n].get(i)).getValue());
 

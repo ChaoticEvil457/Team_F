@@ -1,15 +1,11 @@
 import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.Scanner;
+
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.JToggleButton;
+
 
 public class Hackathon extends JFrame{
 	JTextArea chatbox;
